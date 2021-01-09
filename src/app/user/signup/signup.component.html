@@ -1,0 +1,92 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+
+    <a class="navbar-brand" href="/">My Chat</a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+
+        <span class="navbar-toggler-icon"></span>
+
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <ul class="navbar-nav mr-auto">
+
+            <li class="nav-item">
+
+                <a class="nav-link" routerLink="/login">Login</a>
+
+            </li>
+
+        </ul>
+
+    </div>
+
+</nav>
+
+<div class=signup-form>
+    <div class="container">
+        <form (submit)='onSignup(signupForm)' #signupForm="ngForm">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label>First Name</label>
+                    <input class="form-control" name="firstName" type="text" required ngModel #firstName="ngModel">
+                    <div *ngIf="firstName.invalid  && firstName.touched" class="invalid-feedback">
+                        first name is required
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label>Last Name</label>
+                    <input class="form-control" name="lastName" type="text" required ngModel #lastName="ngModel">
+                    <div *ngIf="lastName.invalid  && lastName.touched" class="invalid-feedback">
+                        last name is required
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>User Name</label>
+                <input class="form-control" name="userName" type="text" required ngModel #userName="ngModel">
+                <div *ngIf="userName.invalid  && userName.touched" class="invalid-feedback">
+                    User name is required
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Email address</label>
+                <input type="email" name="email" class="form-control" required email ngModel #email="ngModel">
+                <div *ngIf="email.hasError('required')  && email.touched" class="invalid-feedback">
+                    email address is required
+                </div>
+                <div *ngIf="email.hasError('email')" class="invalid-feedback">
+                    Please enter valid email address
+                </div>
+            </div>
+            <div class="form-group password">
+                <label>Password</label>
+                <input type='password' name="password" class="form-control" required minlength="6" ngModel
+                    #password="ngModel">
+                <div *ngIf="password.hasError('required') && password.touched" class="invalid-feedback">
+                    password is required
+                </div>
+                <div *ngIf="password.hasError('minlength')" class="invalid-feedback">
+                    minimum 6 characters are required
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Mobile Number</label>
+                <div class="form-row">
+                    <input [(ngModel)]="phoneNumber" name="mobile" class="form-control  col-9 phone-number" type="text"
+                        #mobile="ngModel" required>
+                    <div *ngIf="mobile.hasError('required') && mobile.touched" class="invalid-feedback">
+                        mobile number is required
+                    </div>
+                </div>
+            </div>
+
+            <div class="submit-section">
+                <button type="submit" class="btn btn-dark" [disabled]='signupForm.invalid'>SIGNUP</button>
+            </div>
+        </form>
+    </div>
+</div>

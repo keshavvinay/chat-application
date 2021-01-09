@@ -1,0 +1,30 @@
+.login-form {
+    width: 50%;
+    margin: auto;
+    margin-top: 10%;
+}
+.mat-form-field{
+    width: 100%;
+}
+.invalid-feedback{
+    display: block;
+}
+.form-group.password{
+    position: relative;
+}
+
+fa-icon{
+    position: absolute;
+    right: 9px;
+    top: 37px;
+    cursor: pointer;
+}
+.submit-section{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+.forgot-password{
+    cursor: pointer;
+}

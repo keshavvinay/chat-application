@@ -1,0 +1,29 @@
+@media (max-width: 641px) {
+    .signup-form {
+        width: 100%!important;
+        margin-top: 30%!important;
+    }
+}
+.signup-form {
+    width: 50%;
+    margin: auto;
+    margin-top: 10%;
+}
+.invalid-feedback {
+    display: block;
+}
+
+.form-group.password {
+    position: relative;
+}
+
+.country-code {
+    text-align: center;
+}
+
+fa-icon {
+    position: absolute;
+    right: 9px;
+    top: 37px;
+    cursor: pointer;
+}
